@@ -2,6 +2,7 @@ import { Geist, Geist_Mono, DM_Serif_Display } from "next/font/google";
 import "../styles/globals.css";
 import Sidebar from "../components/Sidebar";
 import Topbar from "@/components/Topbar";
+import ScrollToTop from "@/components/ScrollToTop";
 import { CatalogProvider } from "@/provider/CatalogContext";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
@@ -31,6 +32,7 @@ export default function RootLayout({ children }) {
           <main className="flex min-h-screen relative">
             <Sidebar />
             <div className="flex-1 w-full relative min-w-0 flex flex-col">
+              <ScrollToTop />
               <Topbar />
               <div className="px-8 py-4 w-full flex-1">{children}</div>
             </div>

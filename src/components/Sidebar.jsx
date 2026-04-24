@@ -53,6 +53,7 @@ export default function Sidebar() {
               <Link
                 key={cat.id}
                 href={href}
+                scroll={false}
                 onClick={() => setIsSidebarOpen(false)}
                 className={`flex group items-center gap-3 px-2 py-2 mb-0.5 rounded-lg transition-colors ${
                   isActive
