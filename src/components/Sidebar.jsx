@@ -28,7 +28,7 @@ export default function Sidebar() {
           isSidebarOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="py-4 px-3 flex justify-between items-center">
+        <div className="py-5 px-3 flex justify-between items-center">
           <span className="text-[19px] font-display text-gray-900 leading-none tracking-tight select-none">
             Catalog
           </span>

@@ -12,7 +12,7 @@ const Topbar = () => {
   const { isSidebarOpen, setIsSidebarOpen } = useContext(CatalogContext);
 
   return (
-    <header className="md:py-5 py-2 bg-white border-b border-gray-200 flex items-center justify-between px-4 gap-3 shrink-0 z-50">
+    <header className="md:py-3 py-2 bg-white border-b border-gray-200 flex items-center justify-between px-4 gap-3 shrink-0 z-50">
       <div>
         {!isRoot && (
           <button
