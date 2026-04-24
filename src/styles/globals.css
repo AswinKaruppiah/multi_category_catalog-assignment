@@ -13,6 +13,10 @@
   --font-display: Georgia, serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--font-sans);
   background: #f9fafb;

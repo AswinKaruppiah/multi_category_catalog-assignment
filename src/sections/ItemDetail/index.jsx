@@ -9,6 +9,7 @@ export default function ItemDetail({ item: itemProp }) {
   const item = selectedItem ?? itemProp;
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
     return () => setSelectedItem(null);
   }, []);
 
