@@ -3,7 +3,6 @@ import "../styles/globals.css";
 import Sidebar from "../components/Sidebar";
 import Topbar from "@/components/Topbar";
 import { CatalogProvider } from "@/provider/CatalogContext";
-import ScrollToTop from "@/components/ScrollToTop";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({
@@ -25,16 +24,15 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${dmSerif.variable} h-full`}
+      className={`${geistSans.variable} ${geistMono.variable} ${dmSerif.variable}`}
     >
-      <body className="h-full overflow-hidden antialiased">
+      <body className="min-h-screen antialiased bg-gray-50 text-gray-900">
         <CatalogProvider>
-          <main className="flex h-screen relative">
+          <main className="flex min-h-screen relative">
             <Sidebar />
-            <div className="flex-1 w-full overflow-y-auto relative bg-gray-50" id="main-scroll-container">
-              <ScrollToTop />
+            <div className="flex-1 w-full relative min-w-0 flex flex-col">
               <Topbar />
-              <div className="px-8 py-4 w-full">{children}</div>
+              <div className="px-8 py-4 w-full flex-1">{children}</div>
             </div>
           </main>
         </CatalogProvider>
