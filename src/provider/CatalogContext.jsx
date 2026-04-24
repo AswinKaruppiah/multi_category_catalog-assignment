@@ -7,19 +7,15 @@ import catalogData from "../utils/data.json";
 export const CatalogContext = createContext(null);
 
 export function CatalogProvider({ children }) {
-  const [activeCategory, setActiveCategory] = useState(null);
-  const [activeItem, setActiveItem] = useState(null);
-
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const catalog = groupByCategory(catalogData);
 
   return (
     <CatalogContext.Provider
       value={{
         catalog,
-        activeCategory,
-        setActiveCategory,
-        activeItem,
-        setActiveItem,
+        isSidebarOpen,
+        setIsSidebarOpen
       }}
     >
       {children}
