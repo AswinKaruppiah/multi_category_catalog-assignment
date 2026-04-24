@@ -1,7 +1,17 @@
-import Image from "next/image";
-import Link from "next/link";
+"use client";
 
-export default function ItemDetail({ item, categoryId }) {
+import Image from "next/image";
+import { useContext, useEffect } from "react";
+import { CatalogContext } from "@/provider/CatalogContext";
+
+export default function ItemDetail({ item: itemProp }) {
+  const { selectedItem, setSelectedItem } = useContext(CatalogContext);
+  const item = selectedItem ?? itemProp;
+
+  useEffect(() => {
+    return () => setSelectedItem(null);
+  }, []);
+
   return (
     <div className="py-4">
       <div className="">

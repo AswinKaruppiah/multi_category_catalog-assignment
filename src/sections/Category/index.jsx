@@ -1,7 +1,13 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useContext } from "react";
+import { CatalogContext } from "@/provider/CatalogContext";
 
-export default async function CategoryOverview({ items, id }) {
+export default function CategoryOverview({ items, id }) {
+  const { setSelectedItem } = useContext(CatalogContext);
+
   return (
     <div>
       <div className="flex justify-between items-center flex-wrap gap-5">
@@ -15,6 +21,7 @@ export default async function CategoryOverview({ items, id }) {
           <Link
             key={item.itemname}
             href={`/category/${id}/${encodeURIComponent(item.itemname)}`}
+            onClick={() => setSelectedItem(item)}
             className="bg-white group rounded-xl border border-gray-200 overflow-hidden hover:shadow-md transition-shadow"
           >
             <div className="relative h-44 bg-gray-50">

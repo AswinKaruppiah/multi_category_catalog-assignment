@@ -8,6 +8,7 @@ export const CatalogContext = createContext(null);
 
 export function CatalogProvider({ children }) {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
   const catalog = groupByCategory(catalogData);
 
   return (
@@ -15,7 +16,9 @@ export function CatalogProvider({ children }) {
       value={{
         catalog,
         isSidebarOpen,
-        setIsSidebarOpen
+        setIsSidebarOpen,
+        selectedItem,
+        setSelectedItem,
       }}
     >
       {children}
